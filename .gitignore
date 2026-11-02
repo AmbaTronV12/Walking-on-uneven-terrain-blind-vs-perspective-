@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+train_logs/
+videos/
+*.mp4
+*.pt
+*.onnx
+*.bak
+eval/smoke_*
+eval_t/smoke_*
+patches/
+patches/
+smoke_*

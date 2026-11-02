@@ -1,0 +1,37 @@
+[EVAL] episode_length_s = 20.0
+[EVAL] curriculum terms before: []
+[EVAL] step 0/3005
+[EVAL] step 100/3005
+[EVAL] step 200/3005
+[EVAL] step 300/3005
+[EVAL] step 400/3005
+[EVAL] step 500/3005
+[EVAL] step 600/3005
+[EVAL] step 700/3005
+[EVAL] step 800/3005
+[EVAL] step 900/3005
+[EVAL] step 1000/3005
+[EVAL] step 1100/3005
+[EVAL] step 1200/3005
+[EVAL] step 1300/3005
+[EVAL] step 1400/3005
+[EVAL] step 1500/3005
+[EVAL] step 1600/3005
+[EVAL] step 1700/3005
+[EVAL] step 1800/3005
+[EVAL] step 1900/3005
+[EVAL] step 2000/3005
+[EVAL] step 2100/3005
+[EVAL] step 2200/3005
+[EVAL] step 2300/3005
+[EVAL] step 2400/3005
+[EVAL] step 2500/3005
+[EVAL] step 2600/3005
+[EVAL] step 2700/3005
+[EVAL] step 2800/3005
+[EVAL] step 2900/3005
+[EVAL] run8_stairs-blind  task=Mjlab-Velocity-Stairs-Blind-Booster-K1  speed=0.5  seed=0
+[EVAL] episodes=96  falls=0  fall_rate=0.000
+[EVAL] mean_distance=8.61 m  progress_ratio=0.86
+[EVAL] mean_length=1000 steps  sway=0.177  vel_err=0.139
+[EVAL] csv: /home/arya/projects/terrain-walker/eval/run8_stairs-blind_speed0.5_seed0.csv
