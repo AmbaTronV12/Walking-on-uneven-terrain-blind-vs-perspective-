@@ -65,7 +65,7 @@ Dijalankan oleh `scripts/eval_policy.py`: perintah maju dibekukan 0,5 m/s, kurik
 
 ## Cara mereproduksi
 
-Pelatihan dijalankan dari clone mjlab pada commit dasar di `mjlab_k1_port/BASE_COMMIT.txt`, dengan berkas `mjlab_k1_port/src/...` ditempatkan pada path yang sama di dalam clone tersebut. Contoh melanjutkan Run 7 dari model datar (Run 5) dengan seed latih 1 (dari `scripts/retrain_seed1.sh`):
+Port K1 dibuat sebagai empat commit di atas mjlab commit `8bb2bc9e187797689ec82c78c35019afd2fd0376` (dicatat di `mjlab_k1_port/BASE_COMMIT.txt`; commit terakhir port: `a78fb2044e38eacd29d37c0e61a1ba00d4a33c1b`). Repo ini menyimpan salinan berkas yang kami tambahkan. Untuk memakainya: clone mjlab, `git checkout 8bb2bc9e187797689ec82c78c35019afd2fd0376`, lalu salin isi `mjlab_k1_port/src/` ke `src/` pada clone tersebut. Contoh melanjutkan Run 7 dari model datar (Run 5) dengan seed latih 1 (dari `scripts/retrain_seed1.sh`):
 
 ```bash
 cd ~/projects/mjlab
@@ -95,6 +95,13 @@ Jenis medan yang dievaluasi: `flat`, `pyramid_stairs`, `pyramid_stairs_inv`, `hf
 ## Ide lanjutan
 
 Lebih banyak seed latih, pelatihan dengan *dropout* pada height scan, dan menyelidiki mengapa kebijakan perceptive berhenti di lereng curam.
+
+## Sumber dan lisensi
+
+- Simulator dan kerangka tugas: [mujocolab/mjlab](https://github.com/mujocolab/mjlab) (lisensi Apache 2.0, salinan di `mjlab_k1_port/LICENSE.mjlab`). Tugas velocity K1 di repo ini adalah modifikasi dari tugas velocity bawaan mjlab; berkas yang kami tambah atau ubah ada di `mjlab_k1_port/`.
+- Model robot Booster K1 (`k1.xml` dan mesh STL di `mjlab_k1_port/.../booster_k1/`) berasal dari [BoosterRobotics/booster_assets](https://github.com/BoosterRobotics/booster_assets), hak cipta 2025 BoosterRobotics, lisensi BSD 3-Clause (salinan di `mjlab_k1_port/LICENSE.booster_assets`). Aset robot tetap milik Booster Robotics.
+- Kontribusi proyek ini: konfigurasi tugas K1 (`env_cfgs.py`, `rl_cfg.py`), skrip evaluasi, perekaman klip, penggabungan bobot, dan seluruh catatan eksperimen.
+- Algoritma PPO dari rsl_rl (bawaan mjlab).
 
 ## Penulis
 
