@@ -526,3 +526,27 @@ Catatan: tabel kosong "Hasil akhir" di atas digantikan bagian ini. Di blok awal 
 - Variasi Run7 antar seed latih di slope: 35,4 vs 21,4 -> satu seed tidak cukup
 - Kesimpulan masih indikatif (2 seed latih per resep)
 - Catatan ops: setelah reboot drive Windows harus di-mount ulang (udisksctl mount -b /dev/nvme0n1p3) karena logs adalah symlink ke /media/arya/Windows/UbuntuProject/rl_data/logs
+
+## Percobaan penggabungan bobot blind+perceptive (2026-11-03)
+- Ide: interpolasi aktor (1-a)*Run7 + a*Run10 (induk seed latih 42, sama-sama dari model datar Run 5); script scripts/merge_actors.py; checkpoint logs/rsl_rl/k1_velocity/2026-11-03_merge-a{0.0,0.25,0.5,0.75}
+- Lapisan pertama Run7 ditulis ulang ke ruang normalisasi Run10 (asumsi EPS 1e-2), kolom height scan = 0
+- Uji kewarasan a=0: flat 0% / 9,40 m (= Run7 9,4); slope 32,3% / 6,08 m (Run7 seed0 27,1% / 6,7; dalam derau)
+- Kriteria sebelum evaluasi: a=0,5 berhasil bila (a) jatuh slope ~8-10%, (b) jarak flat ~9 m, (c) random_rough dan wave tidak lebih buruk dari kedua induk
+- Hasil a=0,5 (n=192, jatuh%/jarak m): flat 0/7,9; slope 22,4/6,6; random_rough 18,8/4,0; wave 13,0/4,5
+  Induk Run7: flat 0/9,4; slope 35,4/6,3; random 14,1/4,2; wave 16,1/4,8. Run10: flat 0/7,4; slope 9,9/4,5; random 12,0/5,9; wave 15,1/6,6
+- Kesimpulan: kriteria (a)(b) gagal, (c) sebagian; tidak ada sinergi, perilaku di antara induk atau mengikuti Run7. a lain tidak diuji
+- Ide lanjutan (bila ada waktu): latih satu kebijakan dengan dropout pada height scan
+
+## Klip demo terkontrol (2026-11-03)
+- Klip dari play (record_clips.sh): robot muncul di platform datar dengan perintah acak, banyak keluar peta, tidak mewakili medan sulit -> hanya cocok sebagai klip pembuka
+- Dibuat scripts/record_policy.py (salinan tambalan eval_policy.py + VideoRecorder, opsi via env REC_DIR/REC_LEN/REC_ENV/REC_W/REC_H) dan scripts/record_failures.sh
+- Klip di videos/clips/<nama>/rl-video-step-0.mp4 (8 robot, 12 detik, perintah beku 0,5 m/s)
+- Isi (jatuh/8, jarak m): run10 random_rough 0/8 4,06; run10 slope L0.8 0/8 1,19 (hampir tidak maju); run7 slope L0.8 3/8 5,20; run9 slope L0.8 5/8 4,06; run9 stairs 0,18 1/8 4,79; run7 stairs 0,18 3/8 4,76
+- Catatan: n=8 per klip hanya untuk memilih bahan video, bukan statistik
+
+## 2026-11-03 - Klip demo terkontrol (kamera + rekam sampai jatuh)
+- Klip lama dari play.py tidak representatif (perintah acak, robot keluar peta). Diganti scripts/record_policy.py (perintah maju 0,5 m/s, 8 robot, episode 12 s).
+- Kamera: elevasi harus NEGATIF di MuJoCo agar kamera di atas (positif = dari bawah tanah). Dipakai REC_ELEV=-35, REC_AZ=90 (samping), REC_DIST=5; kamera bawaan terhalang anak tangga.
+- Klip hanya merekam satu robot (REC_ENV). Karena GPU tidak deterministik, scripts/record_falls.sh mengulang REC_ENV 0-7 dan menyimpan klip hanya jika robot itu tercatat jatuh (fell=1, length_steps>=150) di CSV run yang sama. Dapat: run7 tangga env1, run9 tangga env1, run7 lereng env1, run9 lereng env2.
+- Run 7 di tangga 0,18 m: menuruni beberapa anak tangga dengan baik, lalu jatuh menabrak anak tangga di depannya (contoh keterbatasan blind).
+- Keterangan klip tidak memakai angka dari run perekaman; angka evaluasi hanya di laporan. Draft video: videos/demo_draft.mp4 (9,5 MB, 79 s, 960x540).
