@@ -550,3 +550,15 @@ Catatan: tabel kosong "Hasil akhir" di atas digantikan bagian ini. Di blok awal 
 - Klip hanya merekam satu robot (REC_ENV). Karena GPU tidak deterministik, scripts/record_falls.sh mengulang REC_ENV 0-7 dan menyimpan klip hanya jika robot itu tercatat jatuh (fell=1, length_steps>=150) di CSV run yang sama. Dapat: run7 tangga env1, run9 tangga env1, run7 lereng env1, run9 lereng env2.
 - Run 7 di tangga 0,18 m: menuruni beberapa anak tangga dengan baik, lalu jatuh menabrak anak tangga di depannya (contoh keterbatasan blind).
 - Keterangan klip tidak memakai angka dari run perekaman; angka evaluasi hanya di laporan. Draft video: videos/demo_draft.mp4 (9,5 MB, 79 s, 960x540).
+
+## run10_seed2 selesai (2026-11-11 23:22)
+- Task: Mjlab-Velocity-Rough-Perceptive-Booster-K1, init dari 2026-10-30_perceptive-init-from-flat/model_9998.pt, agent.seed 2, env.seed 2, 768 env, 5000 iterasi tambahan
+- Folder: logs/rsl_rl/k1_velocity/2026-11-11_22-31-19/
+- Log penuh: /home/arya/projects/terrain-walker/train_logs/run10_seed2.log
+- Tujuan: sampel pelatihan ketiga (seed 2) untuk menguatkan perbandingan blind vs perceptive
+
+## run7_seed2 selesai (2026-11-12 00:10)
+- Task: Mjlab-Velocity-Rough-Blind-Booster-K1, init dari 2026-10-28_08-32-06/model_4999.pt, agent.seed 2, env.seed 2, 768 env, 5000 iterasi tambahan
+- Folder: logs/rsl_rl/k1_velocity/2026-11-11_23-22-31/
+- Log penuh: /home/arya/projects/terrain-walker/train_logs/run7_seed2.log
+- Tujuan: sampel pelatihan ketiga (seed 2) untuk menguatkan perbandingan blind vs perceptive
