@@ -562,3 +562,41 @@ Catatan: tabel kosong "Hasil akhir" di atas digantikan bagian ini. Di blok awal 
 - Folder: logs/rsl_rl/k1_velocity/2026-11-11_23-22-31/
 - Log penuh: /home/arya/projects/terrain-walker/train_logs/run7_seed2.log
 - Tujuan: sampel pelatihan ketiga (seed 2) untuk menguatkan perbandingan blind vs perceptive
+
+## run10_seed2 selesai (2026-11-17 14:16)
+- Task: Mjlab-Velocity-Rough-Perceptive-Booster-K1, init dari 2026-10-30_perceptive-init-from-flat/model_9998.pt, agent.seed 2, env.seed 2, 768 env, 5000 iterasi tambahan
+- Folder: logs/rsl_rl/k1_velocity/2026-11-17_14-15-52/
+- Log penuh: /home/arya/projects/terrain-walker/train_logs/run10_seed2.log
+- Tujuan: sampel pelatihan ketiga (seed 2) untuk menguatkan perbandingan blind vs perceptive
+
+## run7_seed2 selesai (2026-11-17 14:16)
+- Task: Mjlab-Velocity-Rough-Blind-Booster-K1, init dari 2026-10-28_08-32-06/model_4999.pt, agent.seed 2, env.seed 2, 768 env, 5000 iterasi tambahan
+- Folder: logs/rsl_rl/k1_velocity/2026-11-17_14-15-52/
+- Log penuh: /home/arya/projects/terrain-walker/train_logs/run7_seed2.log
+- Tujuan: sampel pelatihan ketiga (seed 2) untuk menguatkan perbandingan blind vs perceptive
+
+## run10_seed2 selesai (2026-11-17 14:16)
+- Task: Mjlab-Velocity-Rough-Perceptive-Booster-K1, init dari 2026-10-30_perceptive-init-from-flat/model_9998.pt, agent.seed 2, env.seed 2, 768 env, 5000 iterasi tambahan
+- Folder: logs/rsl_rl/k1_velocity/2026-11-17_14-15-52/
+- Log penuh: /home/arya/projects/terrain-walker/train_logs/run10_seed2.log
+- Tujuan: sampel pelatihan ketiga (seed 2) untuk menguatkan perbandingan blind vs perceptive
+
+## run7_seed2 selesai (2026-11-17 14:16)
+- Task: Mjlab-Velocity-Rough-Blind-Booster-K1, init dari 2026-10-28_08-32-06/model_4999.pt, agent.seed 2, env.seed 2, 768 env, 5000 iterasi tambahan
+- Folder: logs/rsl_rl/k1_velocity/2026-11-17_14-15-52/
+- Log penuh: /home/arya/projects/terrain-walker/train_logs/run7_seed2.log
+- Tujuan: sampel pelatihan ketiga (seed 2) untuk menguatkan perbandingan blind vs perceptive
+
+## run9_tall selesai (2026-11-17 15:07)
+- Task: Mjlab-Velocity-StairsTall-Perceptive-Booster-K1, init dari 2026-10-28_19-30-00_perceptive-init/model_9998.pt, 768 env, 5000 iterasi tambahan, seed bawaan
+- Medan: STAIRS_TALL_TERRAINS_CFG (easy 0,02-0,06 | moderate 0,06-0,12 | challenging 0,12-0,20 m)
+- Folder: logs/rsl_rl/k1_velocity/2026-11-17_14-19-35/
+- Log penuh: /home/arya/projects/terrain-walker/train_logs/run9_tall.log
+- Tujuan: uji apakah lonjakan jatuh Run 9 di tangga 0,18 m karena tinggi tangga latihan maksimum hanya 0,10 m
+
+## run8_tall selesai (2026-11-17 15:50)
+- Task: Mjlab-Velocity-StairsTall-Blind-Booster-K1, init dari 2026-10-28_12-23-06/model_9998.pt, 768 env, 5000 iterasi tambahan, seed bawaan
+- Medan: STAIRS_TALL_TERRAINS_CFG (easy 0,02-0,06 | moderate 0,06-0,12 | challenging 0,12-0,20 m)
+- Folder: logs/rsl_rl/k1_velocity/2026-11-17_15-07-16/
+- Log penuh: /home/arya/projects/terrain-walker/train_logs/run8_tall.log
+- Tujuan: uji apakah lonjakan jatuh Run 9 di tangga 0,18 m karena tinggi tangga latihan maksimum hanya 0,10 m
