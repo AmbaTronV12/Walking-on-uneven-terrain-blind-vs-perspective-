@@ -105,4 +105,8 @@ Lebih banyak seed latih, pelatihan dengan *dropout* pada height scan, dan menyel
 
 ## Penulis
 
-Arya, magang di tim ICHIRO, Institut Teknologi Sepuluh Nopember (ITS).
+I Putu Rohedi Arya Wijaya Putra dan Claude
+
+## Note
+
+Aku jujur aja mas kalo dibantu AI makanya aku masukin claude ke kontributor
