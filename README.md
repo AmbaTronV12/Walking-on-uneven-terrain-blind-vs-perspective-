@@ -115,8 +115,8 @@ Lebih banyak seed latih (terutama untuk tangga tinggi), tangga di atas 0,20 m, p
 
 ## Penulis
 
-I Putu Rohedi Arya Wijaya Putra dan Claude
+I Putu Rohedi Arya Wijaya Putra, magang di tim ICHIRO, Institut Teknologi Sepuluh Nopember (ITS).
 
-## Note
+## Catatan penggunaan AI
 
-Aku jujur aja mas kalo dibantu AI makanya aku masukin claude ke kontributor
+Kode, eksperimen, dan analisis dikerjakan oleh penulis dengan bantuan Claude (Anthropic), yang dipakai untuk menulis skrip, mendiskusikan hasil, dan menyusun draf laporan. Seluruh angka dalam laporan berasal dari berkas evaluasi di repositori ini.
