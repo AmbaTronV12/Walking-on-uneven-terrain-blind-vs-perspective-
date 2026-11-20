@@ -242,6 +242,34 @@ def booster_k1_stairs_perceptive_env_cfg(play: bool = False) -> ManagerBasedRlEn
   return cfg
 
 
+def _use_tall_stairs(cfg, play):
+  from dataclasses import replace
+
+  from mjlab.terrains.config import STAIRS_TALL_TERRAINS_CFG
+
+  assert cfg.scene.terrain is not None
+  gen = replace(STAIRS_TALL_TERRAINS_CFG)
+  if play:
+    gen.curriculum = False
+    gen.num_rows = 5
+    gen.num_cols = 5
+    gen.border_width = 10.0
+  cfg.scene.terrain.terrain_generator = gen
+  return cfg
+
+
+def booster_k1_stairs_tall_blind_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
+  """K1 blind, stairs up to 0.20 m (tall-stairs experiment)."""
+  return _use_tall_stairs(booster_k1_stairs_blind_env_cfg(play=play), play)
+
+
+def booster_k1_stairs_tall_perceptive_env_cfg(
+  play: bool = False,
+) -> ManagerBasedRlEnvCfg:
+  """K1 perceptive, stairs up to 0.20 m (tall-stairs experiment)."""
+  return _use_tall_stairs(booster_k1_stairs_perceptive_env_cfg(play=play), play)
+
+
 def booster_k1_rough_perceptive_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
   """K1 perceptive (height scan) on the full rough terrain mix, velocity capped."""
   cfg = booster_k1_rough_env_cfg(play=play)
